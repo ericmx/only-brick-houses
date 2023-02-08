@@ -1,7 +1,15 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 
-.navbar {
-    background-color: whitesmoke
+// .navbar {
+// }
+
+// .nav-item {
+//     font-weight: 300
+//     }
+
+nav .nav-item a {
+    color: #d42c20;
+    font-weight: 600;
 }
 
 @import "bootstrap";
