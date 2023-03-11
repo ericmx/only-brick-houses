@@ -12,4 +12,12 @@ nav .nav-item a {
     font-weight: 600;
 }
 
+footer .nav-item a {
+    color: black;
+}
+
+footer .nav-item a:hover {
+    color: #d42c20;
+}
+
 @import "bootstrap";

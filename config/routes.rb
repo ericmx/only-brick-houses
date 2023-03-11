@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'builders' => 'pages#builders'
   get 'neighborhoods' => 'pages#neighborhoods'
   get 'resources' => 'pages#resources'
+  get 'about' => 'pages#about'
+  
 end
