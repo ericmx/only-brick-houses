@@ -8,7 +8,7 @@
       </p>
       <p class="lead mb-4"> Say goodbye to "McMansions", car-only infrastructure, and cheaply built housing. </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-danger btn-lg px-4 gap-3">Connect with a home builder today</button>
+          <%= link_to 'Connect with a Home Builder Today', builders_path, :class => "btn btn-danger btn-lg px-4 me-md-2"%>
       </div>
     </div>
   </div>
@@ -20,9 +20,9 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3">Find your neighborhood</h1>
-        <p class="lead">Whether it's living near a local coffee shop or walking your children to school, the neighborhood that you live in matters.</p>
+        <p class="lead mb-4">Whether it's living near a local coffee shop or walking your children to school, the neighborhood that you live in matters.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-danger btn-lg px-4 me-md-2">Explore neighborhoods</button>
+          <%= link_to 'Explore neighborhoods', neighborhoods_path, :class => "btn btn-danger btn-lg px-4 me-md-2"%>
         </div>
       </div>
     </div>
