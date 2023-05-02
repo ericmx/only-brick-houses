@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'resources' => 'pages#resources'
   get 'build_your_own' => 'pages#build_your_own'
   get 'about' => 'pages#about'
-  
+
+  resources :neighborhoods
+
 end

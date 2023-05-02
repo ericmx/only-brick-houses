@@ -1,6 +1,6 @@
 <h1>Find your neighborhood!</h1>
 <p>
-Looking to make a move? 
+Looking to make a move?
 </p>
 <p>
 Why not start with the best neighborhoods?
@@ -8,140 +8,18 @@ Why not start with the best neighborhoods?
 <p>
 We're adding more locations every day. :)
 </p>
-  <h3> Atlanta </h3>
+<% current_city = nil %>
+<% @neighborhoods.each do |neighborhood| %>
+  <% if current_city != neighborhood.neighborhood_city %>
+    <% unless current_city.nil? %>
+      </ul>
+    <% end %>
+    <h2><%= neighborhood.neighborhood_city %></h2>
     <ul>
-      <li> <a href="https://www.zillow.com/inman-park-atlanta-ga/"> Inman Park </a> </li>
-      <li> <a href="https://www.zillow.com/midtown-atlanta-ga/"> Midtown </a> </li>
-      <li> <a href="https://www.zillow.com/old-fourth-ward-atlanta-ga/"> Old Forth Ward </a> </li>
-      <li> <a href="https://www.zillow.com/virginia-highland-atlanta-ga/"> Virginia Highland </a> </li>
-    </ul>
-
-  <h3> Austin </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22906%20Austin%20Dr%20Clarksville%2C%20TN%2037040%22%2C%22mapBounds%22%3A%7B%22north%22%3A30.292208502742493%2C%22east%22%3A-97.73664562569894%2C%22south%22%3A30.261299046467826%2C%22west%22%3A-97.77861683236398%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%22ddd6c6442dX1-CR1v16kqaiuo8g5_1b0mr1%22%7D"> Clarksville </a> </li>
-      <li> <a href="https://www.zillow.com/downtown-austin-tx/"> Downtown </a> </li>
-      <li> <a href="https://www.zillow.com/central-east-austin-austin-tx/"> Central East Austin </a> </li>
-      <li> <a href="https://www.zillow.com/mueller-austin-tx/"> Mueller </a> </li>
-    </ul>
-
-  <h3> Boston </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/back-bay-boston-ma/"> Back Bay </a> </li>
-      <li> <a href="https://www.zillow.com/beacon-hill-boston-ma/"> Beacon Hill </a> </li>
-      <li> <a href="https://www.zillow.com/jamaica-plain-boston-ma/"> Jamaica Plain </a> </li>
-      <li> <a href="https://www.zillow.com/north-end-boston-ma/"> North End </a> </li>
-      <li> <a href="https://www.zillow.com/south-end-boston-ma/"> South End </a> </li>
-    </ul> 
-
-<h3> Charleston </h3>
-  <ul>
-    <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Cannonborough-Elliotborough%22%2C%22mapBounds%22%3A%7B%22west%22%3A-79.9680519845087%2C%22east%22%3A-79.92608077784367%2C%22south%22%3A32.772395338725744%2C%22north%22%3A32.802484640680625%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%22ddd036442cX1-CR1v156ucm4i56t_1b0mr1%22%7D"> Cannonborough Elliotborough </a> </li>
-    <li> <a href="https://www.zillow.com/french-quarter-charleston-sc/"> French Quarter </a> </li>
-    <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Cannonborough-Elliotborough%22%2C%22mapBounds%22%3A%7B%22west%22%3A-79.95695155282664%2C%22east%22%3A-79.9149803461616%2C%22south%22%3A32.76517432443663%2C%22north%22%3A32.79526606844941%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%22ddd2d6442cX1-CR1v156uclz4h51_1b0mr1%22%7D"> Historic Downtown Charleston</a> </li>
-    <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Cannonborough-Elliotborough%22%2C%22mapBounds%22%3A%7B%22west%22%3A-79.95498632691955%2C%22east%22%3A-79.91301512025451%2C%22south%22%3A32.75948462193792%2C%22north%22%3A32.78957828980136%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%22ddcff6442cX1-CR1v156ucm5bn45_1b0mr1%22%7D"> South of Broad </a> </li>
+    <% current_city = neighborhood.neighborhood_city %>
+  <% end %>
+  <li><a href= <%= neighborhood.neighborhood_url %> > <%= neighborhood.neighborhood_name %> </a></li>
+<% end %>
+<% unless current_city.nil? %>
   </ul>
-
-  <h3> Chicago </h3>
-  <ul>
-    <li> <a href="https://www.zillow.com/andersonville-chicago-il/?"> Andersonville </a> </li>
-    <li> <a href="https://www.zillow.com/gold-coast-chicago-il/"> Gold Coast </a> </li>
-    <li> <a href="https://www.zillow.com/lincoln-park-chicago-il/"> Lincoln Park </a> </li>
-    <li> <a href="https://www.zillow.com/west-loop-gate-chicago-il/"> West Loop </a> </li>
-    <li> <a href="https://www.zillow.com/wicker-park-chicago-il/"> Wicker Park </a> </li>
-  </ul>
-
-  <h3> Cincinnati </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/clifton-cincinnati-oh/">Clifton</a> </li>
-      <li> <a href="https://www.zillow.com/mt-adams-cincinnati-oh/"> Mt. Adams</a></li>
-      <li> <a href="https://www.zillow.com/northside-cincinnati-oh/"> Northside</a></li>
-      <li> <a href="https://www.zillow.com/over-the-rhine-cincinnati-oh/"> Over-The-Rhine</a></li>
-    </ul>
-
-  <h3> Cleveland </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/ohio-city-cleveland-oh/">Ohio City</a> </li>
-      <li> <a href="https://www.zillow.com/homes/Tremont,-Cleveland,-OH_rb/">Tremont</a> </li>
-    </ul>
-
-  <h3> Columbus </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/central-clintonville-columbus-oh/"> Clintonville </a> </li>
-      <li> <a href="https://www.zillow.com/german-village-columbus-oh/">German Village</a> </li>
-      <li> <a href="https://www.zillow.com/homes/for_sale/Grandview-Heights,-OH_rb/">Grandview Heights</a> </li>
-      <li> <a href="https://www.zillow.com/italian-village-columbus-oh/"> Italian Village</a></li>
-      <li> <a href="https://www.zillow.com/olde-towne-east-columbus-oh/">Olde Towne East</a> </li>
-      <li> <a href="https://www.zillow.com/victorian-village-columbus-oh/"> Victorian Village</a></li>
-    </ul>
-
-  <h3> Houston </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/greater-heights-houston-tx/"> The Heights </a> </li>
-      <li> <a href="https://www.zillow.com/midtown-houston-tx/"> Midtown </a> </li>
-      <li> <a href="https://www.zillow.com/neartown-montrose-houston-tx/"> Montrose </a> </li>
-      <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%223731%20Rice%20Blvd%20Houston%2C%20TX%2077005%22%2C%22mapBounds%22%3A%7B%22west%22%3A-95.44339079899925%2C%22east%22%3A-95.40141959233421%2C%22south%22%3A29.69777264353965%2C%22north%22%3A29.72885805640543%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%22ddd646442dX1-CR1v156ucm1qocl_1b0mr1%22%7D"> Rice Village </a> </li>
-    </ul>
-
-  <h3> Indianapolis </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/broad-ripple-indianapolis-in/"> Broad Ripple </a> </li>
-      <li> <a href="https://www.zillow.com/fountain-square-indianapolis-in/"> Fountain Square </a> </li>
-    </ul> 
-
-  <h3> Louisville </h3>
-    <ul>  
-      <li> <a href="https://www.zillow.com/butchertown-louisville-ky/"> Butchertown </a> </li>
-      <li> <a href="https://www.zillow.com/old-louisville-louisville-ky"> Old Louisville </a> </li>
-      <li> <a href="https://www.zillow.com/saint-matthews-louisville-ky"> St. Matthews </a> </li>
-    </ul> 
-
-  <h3> Nashville </h3>
-    <ul>
-      <li> <a href=
-      https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Nashville%2C%20TN%22%2C%22mapBounds%22%3A%7B%22west%22%3A-86.7871596662411%2C%22east%22%3A-86.70321725291102%2C%22south%22%3A36.15761741195639%2C%22north%22%3A36.21539183714907%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%2C%22customRegionId%22%3A%225d28f64429X1-CR1fbn2urqc65s5_1e273v%22%7D
-      > East Nasvhille </a> </li>
-      <li> <a href="https://www.zillow.com/homes/for_sale/Germantown,-Nashville,-TN_rb/
-"> Germantown </a> </li>
-      <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%223000%20Hillsboro%20Pike%20%23137%20Nashville%2C%20TN%2037215%22%2C%22mapBounds%22%3A%7B%22west%22%3A-86.8359911244445%2C%22east%22%3A-86.79401991777947%2C%22south%22%3A36.11952851514812%2C%22north%22%3A36.148435088943614%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%225d2b46442aX1-CR1fbn2urqeh4g5_1e273v%22%7D">
- Hillsboro </a> </li>
-    </ul>
-
-   <h3> Philadelphia </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/center-city-philadelphia-pa/"> City Center </a> </li>
-      <li> <a href="https://www.zillow.com/fairmount-philadelphia-pa/"> Fairmount </a> </li>
-      <li> <a href="https://www.zillow.com/northern-liberties-philadelphia-pa/"> Northern Liberties </a> </li>
-      <li> <a href="https://www.zillow.com/old-city-philadelphia-pa/"> Old City </a> </li>
-      <li> <a href="https://www.zillow.com/university-city-philadelphia-pa/"> University City </a> </li>
-    </ul>
-
-  <h3>Pittsburgh</h3>  
-    <ul>
-      <li> <a href="https://www.zillow.com/bloomfield-pittsburgh-pa/">Bloomfield</a> </li>
-      <li> <a href="https://www.zillow.com/central-lawrenceville-pittsburgh-pa/">Lawrenceville</a> </li>
-      <li> <a href="https://www.zillow.com/shadyside-pittsburgh-pa/">Shadyside</a> </li>
-      <li> <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22usersSearchTerm%22%3A%22south%20side%20flats%20pittsburgh%22%2C%22mapBounds%22%3A%7B%22west%22%3A-79.99868528842315%2C%22east%22%3A-79.96233599185332%2C%22south%22%3A40.41217838326571%2C%22north%22%3A40.43710537393548%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A15%2C%22customRegionId%22%3A%229cafe643fdX1-CR1lrslrh9qdkg5_1bvj9f%22%7D"> South Side </a> </li>
-      <li> <a href="https://www.zillow.com/squirrel-hill-north-pittsburgh-pa/">Squirrel Hill North</a> </li>
-      <li> <a href="https://www.zillow.com/squirrel-hill-south-pittsburgh-pa/">Squirrel Hill South</a> </li>
-    </ul>
-
-  <h3> San Francisco </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/haight-san-francisco-ca/"> Haight-Ashbury </a> </li>
-      <li> <a href="https://www.zillow.com/mission-san-francisco-ca/"> The Mission </a> </li>
-      <li> <a href="https://www.zillow.com/nob-hill-san-francisco-ca/"> Nob Hill </a> </li>
-      <li> <a href="https://www.zillow.com/north-beach-san-francisco-ca/"> North Beach </a> </li>
-      <li> <a href="https://www.zillow.com/pacific-heights-san-francisco-ca/"> Pacific Heights </a> </li>
-    </ul>
-
-  <h3> Seattle </h3>
-    <ul>
-      <li> <a href="https://www.zillow.com/ballard-seattle-wa/"> Ballard </a> </li>
-      <li> <a href="https://www.zillow.com/capitol-hill-seattle-wa/"> Capitol Hill </a> </li>
-      <li> <a href="https://www.zillow.com/downtown-seattle-wa/"> Downtown </a> </li>
-      <li> <a href="https://www.zillow.com/east-queen-anne-seattle-wa/"> East Queen Anne </a> </li>
-      <li> <a href="https://www.zillow.com/fremont-seattle-wa/"> Fremont </a> </li>
-      <li> <a href="https://www.zillow.com/lower-queen-anne-seattle-wa/"> Lower Queen Anne </a> </li>
-      <li> <a href="https://www.zillow.com/north-queen-anne-seattle-wa/"> North Queen Anne </a> </li>
-      <li> <a href="https://www.zillow.com/west-queen-anne-seattle-wa/"> West Queen Anne </a> </li>
-    </ul>
+<% end %>
