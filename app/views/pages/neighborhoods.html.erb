@@ -8,18 +8,27 @@ Why not start with the best neighborhoods?
 <p>
 We're adding more locations every day. :)
 </p>
-<% current_city = nil %>
-<% @neighborhoods.each do |neighborhood| %>
-  <% if current_city != neighborhood.neighborhood_city %>
-    <% unless current_city.nil? %>
-      </ul>
-    <% end %>
-    <h2><%= neighborhood.neighborhood_city %></h2>
-    <ul>
-    <% current_city = neighborhood.neighborhood_city %>
+
+<% neighborhoods_by_city = @neighborhoods.group_by(&:neighborhood_city) %>
+<div class="container">
+  <% neighborhoods_by_city.each_slice(3) do |cities| %>
+    <div class="row">
+      <% cities.each do |city, neighborhoods| %>
+        <div class="col-md-4">
+          <div class="card">
+              <%= image_tag "cities/#{city.downcase.parameterize(separator: '_')}.jpg", class: "card-img-top", alt: "#{city} image" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= city %></h5>
+              <ul>
+                <% neighborhoods.each do |neighborhood| %>
+                  <li><a href="<%= neighborhood.neighborhood_url %>"><%= neighborhood.neighborhood_name %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <br>
   <% end %>
-  <li><a href= <%= neighborhood.neighborhood_url %> > <%= neighborhood.neighborhood_name %> </a></li>
-<% end %>
-<% unless current_city.nil? %>
-  </ul>
-<% end %>
+</div>
