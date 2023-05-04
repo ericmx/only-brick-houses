@@ -1,24 +1,13 @@
-<h1>Find your neighborhood!</h1>
-<p>
-Looking to make a move?
-</p>
-<p>
-Why not start with the best neighborhoods?
-</p>
-<p>
-We're adding more locations every day. :)
-</p>
-
 <% neighborhoods_by_city = @neighborhoods.group_by(&:neighborhood_city) %>
 <div class="container">
   <% neighborhoods_by_city.each_slice(3) do |cities| %>
     <div class="row">
       <% cities.each do |city, neighborhoods| %>
         <div class="col-md-4">
-          <div class="card">
-              <%= image_tag "cities/#{city.downcase.parameterize(separator: '_')}.jpg", class: "card-img-top", alt: "#{city} image" %>
+          <div class="card border-secondary mb-3">
+              <%= image_tag "cities/#{city.downcase.parameterize(separator: '_')}.jpg", class: "card-img-top", width: "400", height: "200", alt: "#{city} image" %>
             <div class="card-body">
-              <h5 class="card-title"><%= city %></h5>
+              <h2 class="card-title"><%= city %></h2>
               <ul>
                 <% neighborhoods.each do |neighborhood| %>
                   <li><a href="<%= neighborhood.neighborhood_url %>"><%= neighborhood.neighborhood_name %></a></li>
