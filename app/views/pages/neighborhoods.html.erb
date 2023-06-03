@@ -1,3 +1,7 @@
+Note to self: This page should link out to each neighborhood and each neighborhood should have its own page
+
+Note to self: I need to create a platform for builders. They need to be able to login, receive inquiries, post pictures and info, etc.
+
 <% neighborhoods_by_city = @neighborhoods.group_by(&:neighborhood_city) %>
 <div class="container">
   <% neighborhoods_by_city.each_slice(3) do |cities| %>

@@ -8,10 +8,6 @@ Rails.application.routes.draw do
   get 'build_your_own' => 'pages#build_your_own'
   get 'education' => 'pages#education'
   get 'neighborhoods' => 'pages#neighborhoods'
-  get 'products' => 'pages#products'
-
-  get '/cities/:id/neighborhoods', to: 'neighborhoods#index', as: 'city_neighborhoods'
-
 
   resources :neighborhoods
 
